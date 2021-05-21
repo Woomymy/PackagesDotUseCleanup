@@ -15,4 +15,16 @@ if __name__ == "__main__":
         printc(f"Unable to determine file type of {usepath}!", 31)
     packages = get_packages_list(usepath)
     packages = clean_packages_list(packages)
+    categories = {}
     
+    for package in packages:
+        
+        parts = package.split('/')
+        if len(parts) != 2:
+            printc(f"Skipping {package} because package is invalid", 33)
+            continue
+        if not parts[0] in categories:
+            categories[parts[0]] = [parts[1]]
+        else:
+            categories[parts[0]].append(parts[1])
+
