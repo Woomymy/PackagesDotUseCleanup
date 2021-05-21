@@ -21,3 +21,14 @@ def get_packages_list(usepath):
             printc(f"Can't read dir {usepath}", 31)
 
     return lines
+
+def clean_packages_list(packages):
+    """
+    Remove comments from the package list
+    """
+    lines = []
+    for line in packages:
+        if not line.startswith("#"):
+            lines.append(line)
+    
+    return lines
