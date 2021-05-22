@@ -9,8 +9,7 @@ from sys import argv, exit as cexit, stderr
 from os.path import isdir, isfile
 from lib.colorp import printc
 from lib.getpackageslist import get_packages_list
-from lib.sort import sort_packages
-
+from lib.process import process_packages
 if __name__ == "__main__":
     if len(argv) < 2:
         printc("No arguments!", 31)
@@ -20,7 +19,7 @@ if __name__ == "__main__":
         printc(f"Unable to determine file type of {usepath}!", 31)
         cexit(1)
     packages = get_packages_list(usepath)
-    (filecontent, skipped) = sort_packages(packages)
-    print(filecontent)
-    for pack in skipped:
-        printc(f"Skipped {pack} because line is invalid...", 33, stderr)
+    (packages, removed) = process_packages(packages)
+    print(packages)
+    for pack in removed:
+        printc(f"Removed \"{pack}\" because it isn't installed!", 33, stderr)
