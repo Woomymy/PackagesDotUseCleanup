@@ -15,7 +15,6 @@ if __name__ == "__main__":
     if len(argv) < 2:
         printc("No arguments!", 31)
         cexit(1)
-
     usepath = argv[1]
     if not isdir(usepath) and not isfile(usepath):
         printc(f"Unable to determine file type of {usepath}!", 31)
