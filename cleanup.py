@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from sys import argv, exit
+from sys import argv, exit, stderr
 from lib.colorp import printc
 from lib.getpackageslist import get_packages_list, clean_packages_list
 from os.path import isdir, isfile
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     for package in packages:
         parts = package.split('/')
         if len(parts) != 2:
-            printc(f"Skipping {package} because package is invalid", 33)
+            printc(f"Skipping {package} because package is invalid", 33, stderr)
             continue
         if not parts[0] in categories:
             categories[parts[0]] = [parts[1]]
