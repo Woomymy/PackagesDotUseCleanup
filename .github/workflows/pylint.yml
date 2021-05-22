@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      - name: Install pylint
-        run: pip install pylint
+      - name: Install pylint and portage
+        run: pip install pylint portage
       - name: Run pylint
         run: pylint cleanup.py lib/*.py
