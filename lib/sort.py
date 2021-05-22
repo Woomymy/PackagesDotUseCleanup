@@ -9,12 +9,8 @@ def sort_packages(packages):
     """
     packages = clean_packages_list(packages)
     categories = {}
-    skipped = []
     for package in packages:
         parts = package.split('/')
-        if len(parts) != 2:
-            skipped.append(package)
-            continue
         if not parts[0] in categories:
             categories[parts[0]] = [parts[1]]
         else:
@@ -27,4 +23,4 @@ def sort_packages(packages):
             filecontent += f"{cat}/{package}\n"
         filecontent += "\n"
 
-    return (filecontent, skipped)
+    return filecontent
