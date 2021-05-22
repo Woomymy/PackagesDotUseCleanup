@@ -1,3 +1,5 @@
+from sys import stderr
+from lib.colorp import printc
 from lib.getpackageslist import clean_packages_list
 def sort_packages(packages):
     packages = clean_packages_list(packages)
