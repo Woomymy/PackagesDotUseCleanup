@@ -1,8 +1,6 @@
 """
 Module for packages sorting
 """
-from sys import stderr
-from lib.colorp import printc
 from lib.getpackageslist import clean_packages_list
 
 def sort_packages(packages):
@@ -11,11 +9,11 @@ def sort_packages(packages):
     """
     packages = clean_packages_list(packages)
     categories = {}
-
+    skipped = []
     for package in packages:
         parts = package.split('/')
         if len(parts) != 2:
-            printc(f"Skipping {package} because package is invalid", 33, stderr)
+            skipped.append(package)
             continue
         if not parts[0] in categories:
             categories[parts[0]] = [parts[1]]
@@ -29,4 +27,4 @@ def sort_packages(packages):
             filecontent += f"{cat}/{package}\n"
         filecontent += "\n"
 
-    return filecontent
+    return (filecontent, skipped)
