@@ -1,5 +1,7 @@
 # Packages.use cleanup
 
+[![Python package](https://github.com/Woomymy/PackagesDotUseCleanup/actions/workflows/pylint.yml/badge.svg)](https://github.com/Woomymy/PackagesDotUseCleanup/actions/workflows/pylint.yml)
+
 Little python script to cleanup /etc/portage/package.use
 
 - [Usage](#usage)
