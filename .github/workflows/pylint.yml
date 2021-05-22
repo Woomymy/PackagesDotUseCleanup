@@ -9,10 +9,7 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.9
