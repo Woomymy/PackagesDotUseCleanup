@@ -1,6 +1,7 @@
 # Packages.use cleanup
 
 [![Python package](https://img.shields.io/github/workflow/status/Woomymy/PackagesDotUseCleanup/Python?style=for-the-badge)](https://github.com/Woomymy/PackagesDotUseCleanup/actions/workflows/pylint.yml)
+![License: MIT](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)
 
 Little python script to cleanup /etc/portage/package.use
 
