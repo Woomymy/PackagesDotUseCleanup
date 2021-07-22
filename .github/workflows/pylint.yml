@@ -1,5 +1,5 @@
 ---
-name: Python package
+name: Python
 
 on:  # yamllint disable-line rule:truthy
   push:
