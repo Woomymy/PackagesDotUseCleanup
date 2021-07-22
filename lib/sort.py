@@ -16,7 +16,7 @@ def sort_packages(packages):
         else:
             categories[parts[0]].append(parts[1])
     filecontent = ""
-    for cat in categories:
+    for cat in categories.items():
         filecontent += f"# {cat}\n"
         categories[cat].sort()
         for package in categories[cat]:
