@@ -6,7 +6,6 @@
 Little python script to cleanup /etc/portage/package.use
 
 - [Usage](#usage)
-- [Demo](#demo)
 
 ## Usage
 
@@ -15,8 +14,4 @@ Little python script to cleanup /etc/portage/package.use
 ./cleanup.py /etc/portage/package.use > newuses
 # This will remove uninstalled packages uses and print them to stderr
 ```
-
-## Demo
-
-[![asciicast](https://asciinema.org/a/415627.svg)](https://asciinema.org/a/415627)
 
