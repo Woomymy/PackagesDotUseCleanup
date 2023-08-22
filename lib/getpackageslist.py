@@ -35,6 +35,6 @@ def clean_packages_list(packages):
     """
     lines = []
     for line in packages:
-        if not line.startswith("#"):
+        if not line.startswith("#") and not line.strip() == "":
             lines.append(line)
     return lines
