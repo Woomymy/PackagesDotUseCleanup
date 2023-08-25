@@ -12,7 +12,7 @@ def get_packages_list(usepath):
     lines = []
     if isfile(usepath):
         try:
-            with open(usepath) as file:
+            with open(usepath, "r", encoding="UTF-8") as file:
                 for line in file.readlines():
                     lines.append(line.strip())
         except IOError:
@@ -21,7 +21,7 @@ def get_packages_list(usepath):
         try:
             files = listdir(usepath)
             for usefile in files:
-                with open(f"{usepath}/{usefile}") as file:
+                with open(f"{usepath}/{usefile}", "r", encoding="UTF-8") as file:
                     for line in file.readlines():
                         lines.append(line.strip())
         except IOError:
