@@ -10,7 +10,11 @@ from os.path import isdir, isfile
 from lib.colorp import printc
 from lib.getpackageslist import get_packages_list
 from lib.process import process_packages
-if __name__ == "__main__":
+
+def main():
+    """
+    Cleanup /etc/portage/package.use(/*)
+    """
     if len(argv) < 2:
         printc("No arguments!", 31)
         cexit(1)
@@ -23,3 +27,6 @@ if __name__ == "__main__":
     print(packages)
     for pack in removed:
         printc(f"Removed \"{pack}\" because it isn't installed!", 33, stderr)
+
+if __name__ == "__main__":
+    main()
